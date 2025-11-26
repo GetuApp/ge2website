@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ge2Media - YouTube, TikTok & Telegram Content</title>
+    <meta name="description" content="Subscribe to Ge2Media on YouTube, TikTok and Telegram for amazing content!">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Ge2Media - Subscribe for Amazing Content">
+    <meta property="og:description" content="Subscribe to Ge2Media on YouTube, TikTok and Telegram for exclusive content!">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80">
+    <meta property="og:url" content="https://ge2media.pages.dev">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ge2Media - Subscribe for Amazing Content">
+    <meta name="twitter:description" content="Subscribe to Ge2Media on YouTube, TikTok and Telegram for exclusive content!">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #FF0000;
+            --secondary: #000000;
+            --accent: #69C9D0;
+            --telegram: #0088cc;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--secondary), #333);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 8px 0;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* CTA Buttons */
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+        }
+
+        .btn i {
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #cc0000;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(255, 0, 0, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #333;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-telegram {
+            background: var(--telegram);
+            color: white;
+            font-size: 1.3rem;
+            margin-top: 20px;
+            padding: 18px 35px;
+        }
+
+        .btn-telegram:hover {
+            background: #0077b5;
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 136, 204, 0.3);
+        }
+
+        /* Channels Section */
+        .channels {
+            padding: 80px 0;
+            background-color: var(--light);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--primary);
+        }
+
+        .channels-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .channel-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .channel-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .channel-header {
+            padding: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .youtube-header {
+            background: var(--primary);
+        }
+
+        .tiktok-header {
+            background: var(--secondary);
+        }
+
+        .telegram-header {
+            background: var(--telegram);
+        }
+
+        .channel-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+        }
+
+        .channel-content {
+            padding: 25px;
+        }
+
+        .channel-content h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        .channel-content p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        /* Content Preview Section */
+        .content-preview {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .preview-card {
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .preview-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .preview-image {
+            height: 180px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .preview-content {
+            padding: 20px;
+        }
+
+        .preview-content h3 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+
+        .preview-content p {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary);
+        }
+
+        .footer-column p {
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 70px 0;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-play-circle"></i>
+                    Ge2Media
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#channels">Channels</a></li>
+                        <li><a href="#content">Content</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Subscribe & Follow <span class="highlight">Ge2Media</span></h1>
+                <p>Join our growing community on YouTube, TikTok, and Telegram for amazing content!</p>
+                <div class="cta-buttons">
+                    <a href="https://youtube.com/@ge2media?si=RAon51vLBYjSnB4V" class="btn btn-primary" target="_blank">
+                        <i class="fab fa-youtube"></i> Subscribe on YouTube
+                    </a>
+                    <a href="https://www.tiktok.com/@getube11?_t=ZM-90ZCtp8u2SR&_r=1" class="btn btn-secondary" target="_blank">
+                        <i class="fab fa-tiktok"></i> Follow on TikTok
+                    </a>
+                </div>
+                <a href="https://t.me/Ge2Media" class="btn btn-telegram" target="_blank">
+                    <i class="fab fa-telegram"></i> Join Our Telegram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Channels Section -->
+    <section class="channels" id="channels">
+        <div class="container">
+            <h2 class="section-title">Our Channels</h2>
+            
+            <div class="channels-grid">
+                <div class="channel-card">
+                    <div class="channel-header youtube-header">
+                        <i class="fab fa-youtube channel-icon"></i>
+                        <h3>YouTube Channel</h3>
+                    </div>
+                    <div class="channel-content">
+                        <h3>@ge2media</h3>
+                        <p>Subscribe to our YouTube channel for amazing content including tutorials, entertainment, and much more. Don't forget to hit the notification bell so you never miss an update!</p>
+                        <a href="https://youtube.com/@ge2media?si=RAon51vLBYjSnB4V" class="btn btn-primary" target="_blank">
+                            <i class="fab fa-youtube"></i> Subscribe Now
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="channel-card">
+                    <div class="channel-header tiktok-header">
+                        <i class="fab fa-tiktok channel-icon"></i>
+                        <h3>TikTok Account</h3>
+                    </div>
+                    <div class="channel-content">
+                        <h3>@getube11</h3>
+                        <p>Follow us on TikTok for short, entertaining videos that will make your day. Like, comment, and share our content to help us grow our community!</p>
+                        <a href="https://www.tiktok.com/@getube11?_t=ZM-90ZCtp8u2SR&_r=1" class="btn btn-secondary" target="_blank">
+                            <i class="fab fa-tiktok"></i> Follow Now
+                        </a>
+                    </div>
+                </div>
+
+                <div class="channel-card">
+                    <div class="channel-header telegram-header">
+                        <i class="fab fa-telegram channel-icon"></i>
+                        <h3>Telegram Channel</h3>
+                    </div>
+                    <div class="channel-content">
+                        <h3>@Ge2Media</h3>
+                        <p>Join our Telegram channel for exclusive content, updates, and direct communication with our team. Get notified immediately when we post new content!</p>
+                        <a href="https://t.me/Ge2Media" class="btn btn-telegram" target="_blank">
+                            <i class="fab fa-telegram"></i> Join Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Preview Section -->
+    <section class="content-preview" id="content">
+        <div class="container">
+            <h2 class="section-title">Featured Content</h2>
+            
+            <div class="preview-grid">
+                <div class="preview-card">
+                    <div class="preview-image" style="background-image: url('https://images.unsplash.com/photo-1611162616475-46b635cb6868?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80');"></div>
+                    <div class="preview-content">
+                        <h3>Tutorial Videos</h3>
+                        <p>Step-by-step guides and tutorials to help you master new skills and technologies.</p>
+                    </div>
+                </div>
+                
+                <div class="preview-card">
+                    <div class="preview-image" style="background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                    <div class="preview-content">
+                        <h3>Entertainment</h3>
+                        <p>Fun and engaging content designed to entertain and brighten your day.</p>
+                    </div>
+                </div>
+                
+                <div class="preview-card">
+                    <div class="preview-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');"></div>
+                    <div class="preview-content">
+                        <h3>Tech Updates</h3>
+                        <p>Stay informed with the latest technology trends and news in the digital world.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>About Ge2Media</h3>
+                    <p>We create engaging content on YouTube, TikTok, and Telegram for our amazing community. Subscribe and follow to stay updated with our latest videos!</p>
+                    <div class="social-links">
+                        <a href="https://youtube.com/@ge2media?si=RAon51vLBYjSnB4V" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.tiktok.com/@getube11?_t=ZM-90ZCtp8u2SR&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+                        <a href="https://t.me/Ge2Media" target="_blank"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <p><a href="#home" style="color: white; text-decoration: none;">Home</a></p>
+                    <p><a href="#channels" style="color: white; text-decoration: none;">Channels</a></p>
+                    <p><a href="#content" style="color: white; text-decoration: none;">Content</a></p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <p>Have questions about our content?</p>
+                    <p>Reach out to us through our social media channels.</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2023 Ge2Media. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
